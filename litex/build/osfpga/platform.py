@@ -19,7 +19,7 @@ class OSFPGAPlatform(GenericPlatform):
     def __init__(self, device, *args, toolchain="foedag", devicename=None, **kwargs):
         GenericPlatform.__init__(self, device, *args, **kwargs)
         self.devicename = devicename
-        if toolchain in ["foedag", "raptor"]:
+        if toolchain in ["foedag", "raptor", "aurora"]:
             self.toolchain = osfpga.OSFPGAToolchain(toolchain=toolchain)
         else:
             raise ValueError(f"Unknown toolchain {toolchain}")
